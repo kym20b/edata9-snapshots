@@ -1,0 +1,34 @@
+{
+  "owner": "김하나",
+  "headline": "AI와 함께 만든 데이터 도구",
+  "intro": "매주 하나씩 만들어 올립니다. 도구마다 제가 내린 판단이 하나씩 들어 있습니다.",
+  "cards": [
+    {
+      "week": 1,
+      "title": "감 테스트",
+      "line": "공개 데이터로 만든 숫자 맞히기 퀴즈. 폰에서 바로 풀 수 있습니다",
+      "judgment": "정답은 원본에서 계산해 넣고, 하나는 엑셀로 직접 세어 맞췄다. 눈 온 날을 하루 1cm 이상으로 센다고 문항에 적었다",
+      "ai": [
+        "Claude Code",
+        "v0",
+        "Perplexity"
+      ],
+      "url": "https://gam-test-example.vercel.app",
+      "img": "img/w1.jpg"
+    },
+    {
+      "week": 2,
+      "title": "고객 한마디 분류기",
+      "line": "고객 문장 하나를 넣으면 분류 · 감정 · 긴급도와 그 이유가 나옵니다",
+      "judgment": "두 칸에 걸치면 해지관련을 먼저 본다 — 놓치면 다시 데려오는 값이 가장 크다. 개인정보는 브라우저에서 가려 보낸다. 정답 100건으로 세 번 재니 감정은 AI가 규칙보다 30%p 높았고, 긴급도는 66~74%로 흔들려 «높음»은 사람이 한 번 더 본다",
+      "ai": [
+        "Claude Code",
+        "Google AI Studio",
+        "ChatGPT"
+      ],
+      "url": "https://classifier-example.vercel.app",
+      "img": ""
+    }
+  ],
+  "proposal": null
+}

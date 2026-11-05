@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>포트폴리오</title>
+<meta name="description" content="AI와 함께 만든 데이터 도구들. 도구마다 내가 내린 판단이 하나씩 들어 있습니다.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main id="app">
+  <header class="hero">
+    <div class="badge" id="owner"></div>
+    <h1 id="headline"></h1>
+    <p id="intro" class="muted"></p>
+    <nav class="jump"><a href="#cards">만든 것</a><a href="#proposal">제안</a></nav>
+  </header>
+
+  <section id="cards" class="cards"></section>
+
+  <section id="proposal" class="proposal" hidden>
+    <div class="label">제안</div>
+    <h2 id="p-title"></h2>
+    <p class="ask" id="p-ask"></p>
+    <h3>근거</h3><ul id="p-evidence"></ul>
+    <h3>틀린다면</h3><ul id="p-wrong"></ul>
+    <h3>하지 말 것</h3><p id="p-dont"></p>
+  </section>
+
+  <footer class="fineprint">모든 숫자는 만들어낸 통신사 데이터에서 나왔습니다. 실제 고객은 없습니다.</footer>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
