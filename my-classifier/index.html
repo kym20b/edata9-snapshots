@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IT 요청 분류기</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <header>
+      <h1>IT 요청 분류기</h1>
+      <p class="sub">AI(Gemini)로 가르고, 안 되면 규칙으로 가릅니다</p>
+    </header>
+
+    <p id="notice" class="notice" role="alert" hidden></p>
+
+    <div class="tabs" role="tablist" aria-label="화면 선택">
+      <button type="button" role="tab" id="tab-classify" class="tab" aria-controls="panel-classify" aria-selected="true">분류</button>
+      <button type="button" role="tab" id="tab-grade" class="tab" aria-controls="panel-grade" aria-selected="false" tabindex="-1">채점</button>
+    </div>
+
+    <section id="panel-classify" role="tabpanel" aria-labelledby="tab-classify">
+      <form id="form" autocomplete="off">
+        <label for="sentence">요청 문장 한 줄</label>
+        <input id="sentence" type="text" placeholder="요청 문장을 한 줄로 적어 주세요">
+        <button type="submit" id="btn-classify" class="primary" disabled>분류</button>
+      </form>
+
+      <div id="result" class="card" hidden>
+        <dl>
+          <dt>가린 문장</dt><dd id="r-masked"></dd>
+          <dt>칸</dt><dd id="r-cat" class="big"></dd>
+          <dt>긴급도</dt><dd><span id="r-urg" class="badge"></span></dd>
+          <dt>이유</dt><dd id="r-why"></dd>
+          <dt>방식</dt>
+          <dd id="r-src"></dd>
+          <dd id="r-fail" class="meta" hidden></dd>
+        </dl>
+      </div>
+
+      <details id="kw">
+        <summary>규칙 낱말 보기</summary>
+        <div id="kw-body"></div>
+      </details>
+    </section>
+
+    <section id="panel-grade" role="tabpanel" aria-labelledby="tab-grade" hidden>
+      <p class="hint">채점용 정답 파일을 이때 처음 읽습니다. 가린 문장으로 분류해 정답과 비교합니다.</p>
+      <div class="btnrow">
+        <button type="button" id="btn-grade" class="primary" disabled>규칙으로 채점</button>
+        <button type="button" id="btn-grade-ai" class="primary" disabled>AI로 채점</button>
+      </div>
+      <div id="grade-out" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <script src="mask.js"></script>
+  <script src="rules.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
